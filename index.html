@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Artificial Neural Networks</title>
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <script src="js/bootstrap.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="js/script.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    </head>
+    <body>
+        <div class = "parallax" style = "background-image: url(brain.jpeg); color:white">
+            <div class="content1">
+                <h1>Artificial Neural Networks</h1>
+                <h2>By: Lucas Khan | 12-G</h2>
+            </div>
+        </div>
+        <div class="cont", style="background-image: url(background.jpeg);">
+            <div class="parallax">
+                <div class="maintext container main">
+                    <br/>
+                    <br/>
+                    <h2 id="test">What are neural networks?</h2>
+                    <p>An <b>artificial neural network</b> (ANN) is a computational model inspired by the physiology of animal brains.
+                    Similar to the way neurons in the brain send signals to each other, an ANN consists of interconnected nodes
+                    (neurons) that map a certain input to a certain output or prediction.</p>
+        
+                    <br/>
+                    <p>A commonly used form of neural network is the multilayer perceptron (MLP), which contains multiple layers of neurons. As a form of artificial intelligence, MLPs are applied to a multitude of problems and fields, such as facial recognition,
+                        automatic translators, and self-driving cars. For problems like these, using conventional algorithms or computer programs
+                        is practically impossible. For example, it would take millions of lines of code and a sizable amount of effort to describe
+                        to a computer what a face looks like or how to adequately translate every word in a language. AI algorithms, meanwhile,
+                        get around this by learning from vast amounts of data in a process called <b>training</b>.
+                    </p>
+                    <p>To illustrate this, we will use a common sample problem: predicting the species of a penguin (either Gentoo or Adelie) based on their bill length,
+                        flipper length, and body mass. For simplicity, this is be a binary classification problem, although
+                        more classes may be added if there is data for it.
+                    </p>
+                    <p class="down">scroll down &or;</p>
+
+                    <!-- <p>Some common applications of MLPs include:</p> -->
+
+
+                </div>
+            </div>
+            <div class = "pv2" id="scrollable" style="background-image:url(image1.png);">
+                <!-- <h3 id ="test">test</h3> -->
+                <div class = "row h-100">
+                    <div class = "col-8 align-self-center">
+                        <!-- <img id="img1" src="image1.png" class="imgholder"> -->
+                        <!-- <div class="text-center" style="border: 1px solid red;height:100%">
+                            <img src="image1.png" style="width:60%">
+                        </div> -->
+                    </div>
+                    <div class="col-3">
+                        <div class = "textbox" id="textbox">
+                            <h2>How neural networks work</h2>
+                            <!-- <button class="btn btn-dark" onclick="test()">test</button> -->
+                            <p>MLPs consist of three main parts: the input layer, the hidden layers, and the output layer.</p>
+                            <h3>The input layer</h3>
+                            <p>The input layer is in charge of collecting training data. Since we are using three variables (bill length,
+                                flipper length, and body mass) to predict the species of a penguin, the input layer will contain three neurons.</p>
+                            <p>After it collects the data, it is passed through an <b> activation function</b> \( \sigma \), which typically returns a value between
+                            0 and 1 for all real values. Commonly used activation functions are sigmoid functions like \(\sigma (x) = \tanh{(x)}\),
+                            or the rectified linear unit (ReLU) function.</p>
+                            <p class="down">scroll down &or;</p>
+                        </div>
+                    </div>
+                    <div class="col-1">
+
+                    </div>
+                </div>
+            </div>
+            <div class = "pv2" id="scrollable" style="background-image:url(image2.png);">
+                <div class = "row h-100">
+                    <div class = "col-8 align-self-center">
+                        <!-- <img id="img1" src="image1.png" class="imgholder"> -->
+                        <!-- <div class="text-center" style="border: 1px solid red;height:100%">
+                            <img src="image1.png" style="width:60%">
+                        </div> -->
+                    </div>
+                    <div class="col-3">
+                        <div class = "textbox" id="textbox">
+                            <h2>The hidden layers</h2>
+                            <!-- <button class="btn btn-dark" onclick="test()">test</button> -->
+                            <p>After data is received by the input layer, it is processed in the hidden layers. Neurons here are connected to each other
+                                by weights. As the MLP receives more training data, the weights get optimized to produce accurate results.</p>
+
+                            <p>Initially, each neural connection is assigned a random weight \(w_i\). During training, each neuron in the first hidden layer receives 
+                                the value \(x_i\) of every neuron in the input layer, which is multiplied with the weight. Combining this product with a bias
+                                term \(b\) and put through an activation function \( \sigma \), this produces the neuron's assigned value \(z\):
+                            </p>
+                            <p class="equation">
+                                \( \displaystyle z = \sigma \left(\sum_{i=0}^{n} w_i x_i + b \right) \)
+                            </p>
+                            <p>This value is then passed on to every neuron in the next layer.</p>
+
+                            <p class="down">scroll down &or;</p>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-1">
+
+                    </div>
+                </div>
+            </div>
+            <div class = "pv2" id="scrollable" style="background-image:url(image3.png);">
+                <div class = "row h-100">
+                    <div class = "col-8 align-self-center">
+                        <!-- <img id="img1" src="image1.png" class="imgholder"> -->
+                        <!-- <div class="text-center" style="border: 1px solid red;height:100%">
+                            <img src="image1.png" style="width:60%">
+                        </div> -->
+                    </div>
+                    <div class="col-3">
+                        <div class = "textbox" id="textbox">
+                            <h2>The output layer</h2>
+                            <!-- <button class="btn btn-dark" onclick="test()">test</button> -->
+                            <p>As seen here, the process of multiplying weights and inputs repeats for every neuron up until the last layer, where
+                                the weighted sum is used to make a prediction.
+                            </p>
+                            <p>Since all values here are between 0 and 1, they can be used to model a binary outcome: if, for example, the neuron
+                                corresponding to the category "Gentoo" has a value greater than 0.5, that becomes the model's prediction.
+                            </p>
+                            
+
+                            <p class="down">scroll down &or;</p>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-1">
+
+                    </div>
+                </div>
+            </div>
+            <div class = "parallax">
+                <div class="maintext container main">
+                    <br/><br/><br/>
+                    <h2>Backpropagation: how neural networks learn</h2>
+                    <p>
+                        We previously established that neural networks "learn" by having their weights and biases optimized.
+                        In multilayer perceptrons, this is done using a process called backpropagation, which uses partial derivatives to minimize error.
+                    </p>
+                    <div class="text-center">
+                        <figure class="figure">
+                            <img src="xkcd.png" class="figure-img img-fluid rounded" alt="...">
+                            <figcaption class="figure-caption"><a href="https://xkcd.com/1838/">image source</a></figcaption>
+                        </figure>
+                    </div>
+                    <h3>The cost function</h3>
+                    <p>MLPs commonly use <b>least mean squares</b> to measure the error of a particular configuration of weights.
+                    The degree of error of output neuron \( j \) in predicting the \(n\)th datapoint in a training dataset is given by
+                    </p>
+
+                    <p class = "equation">
+                        \( \displaystyle \mathcal{E}(n)=\frac{1}{2}\sum_j \left[\hat{y}_j (n) - y_j (n) \right]^2 \)
+                    </p>
+
+                    <p>Where \( \hat{y}_j \) is the expected value for neuron \(j\) in an MLP's output layer while \(y_j\) is its actual value. (Note
+                        that \(n\) is not being multiplied to either of the two; it just refers to the \(n\)th datapoint.)
+                    </p>
+
+                    <div class="row w-100">
+                        <div class="col-3">
+                            <img src="image4.png" style="width:100%">
+                        </div>
+                        <div class="col-9">
+                            <br/><br/>
+                            <p>For example, if the MLP depicted to the left is correct in predicting "Gentoo" for the \(n\)th datapoint in its training dataset, the expected values \( \hat{y}_j \)
+                                are 1 for the "Gentoo" neuron and 0 for the "Adelie" neuron. As such, its error is given by:
+                            </p>
+                            <p class = "equation">
+                                \( \displaystyle \mathcal{E}(n)=\frac{1}{2} \left[ (1 - 0.82)^2 + (0 - 0.42)^2 \right] \)
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <h3>Gradient descent</h3>
+                    <p>To optimize an MLP's weights, we must measure how it changes with regard to its error. Here, the change \( \Delta w_{ji} (n) \) of the weight
+                        connecting neurons \( i \) and \( j \), where \( j \) is in the succeeding layer, is given by
+                    </p>
+                    <p class="equation">
+                        \( \displaystyle \Delta w_{ji} (n) = -\eta\frac{\partial\mathcal{E}(n)}{\partial v_j(n)} y_i(n) \)
+                    </p>
+                    <p>where \( v_j(n) \) is the sum of all the weights connected to neuron \( j \), \( y_i \) is the output of the previous neuron \( i \), and
+                        \( \eta \) is the learning rate, a constant selected by the user.
+                    </p>
+
+                    Since gradient descent is an iterative process, the weights are updated for every \(n\)th datapoint in the training dataset. This means that
+                    as training goes on, the MLP's error gradually converges to a local minimum, increasing its accuracy.
+                    
+                    <div class="text-center">
+                        <figure class="figure">
+                            <img class="figure-img img-fluid rounded" src="gradient descent.png" style="width:50vw">
+                            <figcaption class="figure-caption"><a href="http://rasbt.github.io/mlxtend/user_guide/general_concepts/gradient-optimization/">image source</a></figcaption>
+                        </figure>
+                    </div>
+                    <br/><br/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
