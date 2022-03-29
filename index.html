@@ -2,11 +2,13 @@
 <html>
     <head>
         <title>Artificial Neural Networks</title>
-        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <script src="js/bootstrap.js"></script>
+        <!-- <link rel="stylesheet" href="css/bootstrap.css" type="text/css"> -->
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script src="js/script.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <!-- <script src ="js/bootstrap.js"></script>
+        <script src ="js/bootstrap.min.js"></script> -->
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     </head>
@@ -45,95 +47,28 @@
 
                 </div>
             </div>
-            <div class = "pv2" id="scrollable" style="background-image:url(image1.png);">
-                <!-- <h3 id ="test">test</h3> -->
-                <div class = "row h-100">
-                    <div class = "col-8 align-self-center">
-                        <!-- <img id="img1" src="image1.png" class="imgholder"> -->
-                        <!-- <div class="text-center" style="border: 1px solid red;height:100%">
-                            <img src="image1.png" style="width:60%">
-                        </div> -->
+            <div class="cent" style="width:100vw;display:block;margin-left:auto;margin-right:auto;">
+                <div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-keyboard="true">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="d-block w-75" src="slide1.png" alt="First slide" style="margin-left:auto;margin-right:auto;">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-75" src="slide2.png" alt="Second slide" style="margin-left:auto;margin-right:auto;">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-75" src="slide3.png" alt="Third slide" style="margin-left:auto;margin-right:auto;">
+                      </div>
                     </div>
-                    <div class="col-3">
-                        <div class = "textbox" id="textbox">
-                            <h2>How neural networks work</h2>
-                            <!-- <button class="btn btn-dark" onclick="test()">test</button> -->
-                            <p>MLPs consist of three main parts: the input layer, the hidden layers, and the output layer.</p>
-                            <h3>The input layer</h3>
-                            <p>The input layer is in charge of collecting training data. Since we are using three variables (bill length,
-                                flipper length, and body mass) to predict the species of a penguin, the input layer will contain three neurons.</p>
-                            <p>After it collects the data, it is passed through an <b> activation function</b> \( \sigma \), which typically returns a value between
-                            0 and 1 for all real values. Commonly used activation functions are sigmoid functions like \(\sigma (x) = \tanh{(x)}\),
-                            or the rectified linear unit (ReLU) function.</p>
-                            <p class="down">scroll down &or;</p>
-                        </div>
-                    </div>
-                    <div class="col-1">
-
-                    </div>
-                </div>
-            </div>
-            <div class = "pv2" id="scrollable" style="background-image:url(image2.png);">
-                <div class = "row h-100">
-                    <div class = "col-8 align-self-center">
-                        <!-- <img id="img1" src="image1.png" class="imgholder"> -->
-                        <!-- <div class="text-center" style="border: 1px solid red;height:100%">
-                            <img src="image1.png" style="width:60%">
-                        </div> -->
-                    </div>
-                    <div class="col-3">
-                        <div class = "textbox" id="textbox">
-                            <h2>The hidden layers</h2>
-                            <!-- <button class="btn btn-dark" onclick="test()">test</button> -->
-                            <p>After data is received by the input layer, it is processed in the hidden layers. Neurons here are connected to each other
-                                by weights. As the MLP receives more training data, the weights get optimized to produce accurate results.</p>
-
-                            <p>Initially, each neural connection is assigned a random weight \(w_i\). During training, each neuron in the first hidden layer receives 
-                                the value \(x_i\) of every neuron in the input layer, which is multiplied with the weight. Combining this product with a bias
-                                term \(b\) and put through an activation function \( \sigma \), this produces the neuron's assigned value \(z\):
-                            </p>
-                            <p class="equation">
-                                \( \displaystyle z = \sigma \left(\sum_{i=0}^{n} w_i x_i + b \right) \)
-                            </p>
-                            <p>This value is then passed on to every neuron in the next layer.</p>
-
-                            <p class="down">scroll down &or;</p>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-1">
-
-                    </div>
-                </div>
-            </div>
-            <div class = "pv2" id="scrollable" style="background-image:url(image3.png);">
-                <div class = "row h-100">
-                    <div class = "col-8 align-self-center">
-                        <!-- <img id="img1" src="image1.png" class="imgholder"> -->
-                        <!-- <div class="text-center" style="border: 1px solid red;height:100%">
-                            <img src="image1.png" style="width:60%">
-                        </div> -->
-                    </div>
-                    <div class="col-3">
-                        <div class = "textbox" id="textbox">
-                            <h2>The output layer</h2>
-                            <!-- <button class="btn btn-dark" onclick="test()">test</button> -->
-                            <p>As seen here, the process of multiplying weights and inputs repeats for every neuron up until the last layer, where
-                                the weighted sum is used to make a prediction.
-                            </p>
-                            <p>Since all values here are between 0 and 1, they can be used to model a binary outcome: if, for example, the neuron
-                                corresponding to the category "Gentoo" has a value greater than 0.5, that becomes the model's prediction.
-                            </p>
-                            
-
-                            <p class="down">scroll down &or;</p>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-1">
-
-                    </div>
-                </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                  </div>
             </div>
             <div class = "parallax">
                 <div class="maintext container main">
@@ -143,6 +78,12 @@
                         We previously established that neural networks "learn" by having their weights and biases optimized.
                         In multilayer perceptrons, this is done using a process called backpropagation, which uses partial derivatives to minimize error.
                     </p>
+                    <!-- <div class="text-center">
+                        <figure class="figure">
+                            <img src="xkcd.png" class="figure-img img-fluid rounded" alt="...">
+                            <figcaption class="figure-caption"><a href="https://xkcd.com/1838/">image source</a></figcaption>
+                        </figure>
+                    </div> -->
                     <h3>The cost function</h3>
                     <p>MLPs commonly use <b>least mean squares</b> to measure the error of a particular configuration of weights.
                     The degree of error of output neuron \( j \) in predicting the \(n\)th datapoint in a training dataset is given by
@@ -195,5 +136,6 @@
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     </body>
 </html>
